@@ -20,13 +20,13 @@ const { post } = Astro.props;
 <DefaultLayout title="Blog">
   <section class="margin-48">
     <div class="container">
-      <h1>{post.title.rendered}</h1><br />
+      <h1 set:html={post.title.rendered}></h1><br />
       <p>By: {post._embedded.author[0].name}</p>
     </div>
   </section>
   <section class="margin-48">
     <div class="container">
-      <p class="size-20">{post.content.rendered}</p>
+      <p class="size-20" set:html={post.content.rendered}></p>
     </div>
   </section>
 </DefaultLayout>

@@ -1,6 +1,7 @@
 ---
 import DefaultLayout from "../layouts/DefaultLayout.astro";
-import { Card } from "accessible-astro-components";
+// import { Card } from "accessible-astro-components";
+import Card from "../components/Card.svelte";
 
 const endpoint = "https://sprucehealthgroup.com/wp-json/wp/v2/posts?_embed";
 
@@ -28,14 +29,22 @@ const data = await fetch(endpoint).then((res) => res.json());
           data.map((post) => (
             <li>
               <Card
-                url={"/posts/" + post.slug}
-                img={post._embedded["wp:featuredmedia"][0].source_url}
+                href={"/posts/" + post.slug}
+                src={post._embedded["wp:featuredmedia"][0].source_url}
                 title={post.title.rendered}
-                footer={"Author: " + post._embedded.author[0].name}
-              >
-                {post.body}
-              </Card>
+                author={post._embedded.author[0].name}
+              />
             </li>
+            // <li>
+            //   <Card
+            //     url={"/posts/" + post.slug}
+            //     img={post._embedded["wp:featuredmedia"][0].source_url}
+            //     title={post.title.rendered}
+            //     footer={"Author: " + post._embedded.author[0].name}
+            //   >
+            //     {post.body}
+            //   </Card>
+            // </li>
           ))
         }
       </ul>

@@ -15,10 +15,12 @@
     "astro-icon": "^0.7.1"
   },
   "devDependencies": {
+    "@astrojs/svelte": "^1.0.0",
     "astro": "^1.0.3",
     "autoprefixer": "^10.4.0",
     "sass": "^1.49.9",
     "stylelint": "^13.13.1",
-    "stylelint-config-standard": "^22.0.0"
+    "stylelint-config-standard": "^22.0.0",
+    "svelte": "^3.49.0"
   }
 }
