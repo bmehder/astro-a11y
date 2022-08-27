@@ -1,8 +1,8 @@
 <script>
   export let src
+  export let href
   export let title
   export let author
-  export let href
 </script>
 
 <div class="card">
